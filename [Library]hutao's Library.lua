@@ -64,11 +64,11 @@ hutao_lib.vector = function (x, y ,z)
             local b_type = type(b);
         
             if (a_type == "table" and b_type == "table") then
-                return Vector(a.x * b.x, a.y * b.y, a.z * b.z);
+                return vector_table.new(a.x * b.x, a.y * b.y, a.z * b.z);
             elseif (a_type == "table" and b_type == "number") then
-                return Vector(a.x * b, a.y * b, a.z * b);
+                return vector_table.new(a.x * b, a.y * b, a.z * b);
             elseif (a_type == "number" and b_type == "table") then
-                return Vector(a * b.x, a * b.y, a * b.z);
+                return vector_table.new(a * b.x, a * b.y, a * b.z);
             end
         end
 
@@ -77,11 +77,11 @@ hutao_lib.vector = function (x, y ,z)
             local b_type = type(b);
         
             if (a_type == "table" and b_type == "table") then
-                return Vector(a.x / b.x, a.y / b.y, a.z / b.z);
+                return vector_table.new(a.x / b.x, a.y / b.y, a.z / b.z);
             elseif (a_type == "table" and b_type == "number") then
-                return Vector(a.x / b, a.y / b, a.z / b);
+                return vector_table.new(a.x / b, a.y / b, a.z / b);
             elseif (a_type == "number" and b_type == "table") then
-                return Vector(a / b.x, a / b.y, a / b.z);
+                return vector_table.new(a / b.x, a / b.y, a / b.z);
             end
         end
 
@@ -202,10 +202,7 @@ hutao_lib.vector = function (x, y ,z)
 
         function vector_table:to_screen()
             local vector_to_screen = renderer.get_world_to_screen(self.x, self.y, self.z)
-            return {
-                x = vector_to_screen.x,
-                y = vector_to_screen.y,
-            }
+            return vector_table.new(vector_to_screen.x, vector_to_screen.y, 0)
         end
 
         function vector_table.new(x, y, z)
