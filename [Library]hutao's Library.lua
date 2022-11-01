@@ -4,7 +4,17 @@ hutao_lib.math = {}
 hutao_lib.base64 = {}
 hutao_lib.gradient = {}
 
-hutao_lib.print = function (...) local text = "" if type(text) == "table" then for index, value in ipairs(...) do text = tostring(value) .. ", " end else text = tostring(...) end general.log_to_console(text) end
+hutao_lib.print = function (...) 
+    local text = "" 
+    if type(text) == "table" then 
+        for index, value in ipairs(...) do 
+            text = tostring(value) .. ", " 
+        end 
+    else 
+        text = tostring(...) 
+    end 
+    general.log_to_console(text) 
+end
 
 hutao_lib.contains = function (tab, val)
 
@@ -86,7 +96,7 @@ hutao_lib.vector = function (x, y ,z)
         end
 
         function vector_table.__tostring (a)
-            return "( " .. a.x .. ", " .. a.y .. ", " .. a.z .. " )";
+            return "hutao_lib.vector_c ( x: " .. a.x .. ", y: " .. a.y .. ", z: " .. a.z .. " )";
         end
 
         function vector_table:clear()
@@ -119,7 +129,7 @@ hutao_lib.vector = function (x, y ,z)
             return vector_table.new((self.y * other.z) - (self.z * other.y), (self.z * other.x) - (self.x * other.z), (self.x * other.y) - (self.y * other.x));
         end
         
-        function vector_table:dist_to(other)
+        function vector_table:dist(other)
             return (other - self):length();
         end
         
@@ -238,6 +248,10 @@ hutao_lib.color = function (color_r, color_g, color_b, color_a)
         local color_function = {};
         color_function.__index = color_function;
     
+        function color_function.__tostring (a)
+            return "hutao_lib.color_c ( x: " .. a.x .. ", y: " .. a.y .. ", z: " .. a.z .. " )";
+        end
+
         function color_function:get()
             return {
                 r = self.r,
