@@ -1,4 +1,5 @@
 local hutao_lib = {}
+
 hutao_lib.entity = {}
 hutao_lib.math = {}
 hutao_lib.base64 = {}
