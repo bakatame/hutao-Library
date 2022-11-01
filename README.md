@@ -1,4 +1,4 @@
-# hutao-s-Library
+# hutao's Library
 **Rifk7 does not support the require function for loading libraries at the moment, if you want to use it, please copy and paste this library**
     
 ## Description  
