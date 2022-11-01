@@ -551,4 +551,16 @@ hutao_lib.hsv_to_rgb = function(h, s, v)
 	return hutao_lib.color(math.floor(r * 255), math.floor(g * 255), math.floor(b * 255), 255)
 end
 
+hutao_lib.get_eyes_pos = function ()
+
+    local local_player = engine.get_local_player()
+    if not local_player and not local_player or not engine.is_ingame() and not engine.is_connected() or engine.get_local_player():get_netvar_int("m_lifeState") ~= 0 then return false end
+    local origin = local_player:get_netvar_c_vector3d("m_vecOrigin")
+    if not origin then return false end
+    local view_offset = local_player:get_netvar_c_vector3d("m_vecViewOffset")
+    if not view_offset then return false end
+    return hutao_lib.vector(origin.x + view_offset.x, origin.y + view_offset.y, origin.z + view_offset.z)
+
+end
+
 return hutao_lib
