@@ -249,7 +249,7 @@ hutao_lib.color = function (color_r, color_g, color_b, color_a)
         color_function.__index = color_function;
     
         function color_function.__tostring (a)
-            return "hutao_lib.color_c ( x: " .. a.x .. ", y: " .. a.y .. ", z: " .. a.z .. " )";
+            return "hutao_lib.color_c ( r: " .. a.r .. ", g: " .. a.g .. ", b: " .. a.b .. ", a: " .. a.a .. " )";
         end
 
         function color_function:get()
