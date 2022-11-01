@@ -39,11 +39,11 @@ hutao_lib.vector = function (x, y ,z)
             local a_type = type(a);
             local b_type = type(b);
         
-            if (a_type == "table" and b_type == "table") then
+            if ((a_type == "table" or a_type == "userdata") and (b_type == "table" or b_type == "userdata")) then
                 return vector_table.new(a.x + b.x, a.y + b.y, a.z + b.z);
-            elseif (a_type == "table" and b_type == "number") then
+            elseif ((a_type == "table" or a_type == "userdata") and b_type == "number") then
                 return vector_table.new(a.x + b, a.y + b, a.z + b);
-            elseif (a_type == "number" and b_type == "table") then
+            elseif (a_type == "number" and (b_type == "table" or b_type == "userdata")) then
                 return vector_table.new(a + b.x, a + b.y, a + b.z);
             end
 
@@ -53,11 +53,11 @@ hutao_lib.vector = function (x, y ,z)
             local a_type = type(a);
             local b_type = type(b);
         
-            if (a_type == "table" and b_type == "table") then
+            if ((a_type == "table" or a_type == "userdata") and (b_type == "table" or b_type == "userdata")) then
                 return Vector(a.x - b.x, a.y - b.y, a.z - b.z);
-            elseif (a_type == "table" and b_type == "number") then
+            elseif ((a_type == "table" or a_type == "userdata") and b_type == "number") then
                 return Vector(a.x - b, a.y - b, a.z - b);
-            elseif (a_type == "number" and b_type == "table") then
+            elseif (a_type == "number" and (b_type == "table" or b_type == "userdata")) then
                 return Vector(a - b.x, a - b.y, a - b.z);
             end
         end
@@ -74,11 +74,11 @@ hutao_lib.vector = function (x, y ,z)
             local a_type = type(a);
             local b_type = type(b);
         
-            if (a_type == "table" and b_type == "table") then
+            if ((a_type == "table" or a_type == "userdata") and (b_type == "table" or b_type == "userdata")) then
                 return vector_table.new(a.x * b.x, a.y * b.y, a.z * b.z);
-            elseif (a_type == "table" and b_type == "number") then
+            elseif ((a_type == "table" or a_type == "userdata") and b_type == "number") then
                 return vector_table.new(a.x * b, a.y * b, a.z * b);
-            elseif (a_type == "number" and b_type == "table") then
+            elseif (a_type == "number" and (b_type == "table" or b_type == "userdata")) then
                 return vector_table.new(a * b.x, a * b.y, a * b.z);
             end
         end
@@ -87,11 +87,11 @@ hutao_lib.vector = function (x, y ,z)
             local a_type = type(a);
             local b_type = type(b);
         
-            if (a_type == "table" and b_type == "table") then
+            if ((a_type == "table" or a_type == "userdata") and (b_type == "table" or b_type == "userdata")) then
                 return vector_table.new(a.x / b.x, a.y / b.y, a.z / b.z);
-            elseif (a_type == "table" and b_type == "number") then
+            elseif ((a_type == "table" or a_type == "userdata") and b_type == "number") then
                 return vector_table.new(a.x / b, a.y / b, a.z / b);
-            elseif (a_type == "number" and b_type == "table") then
+            elseif (a_type == "number" and (b_type == "table" or b_type == "userdata")) then
                 return vector_table.new(a / b.x, a / b.y, a / b.z);
             end
         end
@@ -197,7 +197,6 @@ hutao_lib.vector = function (x, y ,z)
                 end
             end
 
-
             self.x = x
             self.y = y
             self.z = z
@@ -242,8 +241,6 @@ hutao_lib.vector = function (x, y ,z)
                     z = 0.0;
                 end
             end
-
-
 
             return setmetatable({
                 x = x,
