@@ -416,7 +416,7 @@ hutao_lib.entity.get_class = function (class)
 
 end
 
-hutao_lib.math.clamp = function (min,max, val)
+hutao_lib.math.clamp = function (min, max, val)
     if val < min then return min end
     if val > max then return max end
     return val
