@@ -172,8 +172,16 @@ hutao_lib.vector = function (x, y ,z)
 
         function vector_table:set(x, y, z)
 
-            if not z then
-                z = 0
+            if (type(x) ~= "number") then
+                x = 0.0;
+            end
+        
+            if (type(y) ~= "number") then
+                y = 0.0;
+            end
+        
+            if (type(z) ~= "number") then
+                z = 0.0;
             end
 
             self.x = x
