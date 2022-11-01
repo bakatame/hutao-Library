@@ -179,17 +179,24 @@ hutao_lib.vector = function (x, y ,z)
 
         function vector_table:set(x, y, z)
 
-            if (type(x) ~= "number") then
-                x = 0.0;
+            if type(x) == "userdata" then
+                x = x.x
+                y = x.y
+                z = x.z
+            else
+                if (type(x) ~= "number") then
+                    x = 0.0;
+                end
+            
+                if (type(y) ~= "number") then
+                    y = 0.0;
+                end
+            
+                if (type(z) ~= "number") then
+                    z = 0.0;
+                end
             end
-        
-            if (type(y) ~= "number") then
-                y = 0.0;
-            end
-        
-            if (type(z) ~= "number") then
-                z = 0.0;
-            end
+
 
             self.x = x
             self.y = y
@@ -218,17 +225,25 @@ hutao_lib.vector = function (x, y ,z)
 
         function vector_table.new(x, y, z)
             
-            if (type(x) ~= "number") then
-                x = 0.0;
+            if type(x) == "userdata" then
+                x = x.x
+                y = x.y
+                z = x.z
+            else
+                if (type(x) ~= "number") then
+                    x = 0.0;
+                end
+            
+                if (type(y) ~= "number") then
+                    y = 0.0;
+                end
+            
+                if (type(z) ~= "number") then
+                    z = 0.0;
+                end
             end
-        
-            if (type(y) ~= "number") then
-                y = 0.0;
-            end
-        
-            if (type(z) ~= "number") then
-                z = 0.0;
-            end
+
+
 
             return setmetatable({
                 x = x,
