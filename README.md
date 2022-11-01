@@ -9,7 +9,7 @@ Developed by [@NineY](https://rifk7.com/index.php?members/niney.1804/), [@hutao8
 [Please click me to jump to the wiki page](https://github.com/bakatame/hutao-s-Library/wiki)
   
 ## Found bugs?
-[Please click me to jump to the leeue page]([https://github.com/bakatame/hutao-s-Library/wiki](https://github.com/bakatame/hutao-s-Library/issues))  
+[Please click me to jump to the leeue page](https://github.com/bakatame/hutao-s-Library/issues)  
   
 ## Contribution  
 If you want to contribute code to this project, you are more than welcome to do so!  
