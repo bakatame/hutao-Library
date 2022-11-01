@@ -165,10 +165,6 @@ hutao_lib.vector = function (x, y ,z)
         
             return vector_table.new(self.x / l, self.y / l, self.z / l);
         end
-        
-        function vector_table:vec3()
-            return math.vec3(self.x, self.y, self.z);
-        end
 
         function vector_table:set(x, y, z)
 
